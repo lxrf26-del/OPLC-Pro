@@ -32,13 +32,13 @@ class ModernAudio(BaseHardware):
 
     def native_os(self) -> bool:
         """
-        - Everything before macOS Tahoe 26 is considered native
+        - Everything before macOS Golden_Gate 27 is considered native
         """
-        if self._xnu_major < os_data.tahoe.value:
+        if self._xnu_major < os_data.Golden_Gate.value:
             return True
 
-        # Technically, macOS Tahoe Beta 1 is also native, so return True
-        if self._os_build == "25A5279m":
+        # Technically, macOS Golden Gate Beta 1 is also native, so return True
+        if self._os_build == "26A5353q
             return True
 
         return False
@@ -52,7 +52,7 @@ class ModernAudio(BaseHardware):
 
 
     def requires_kernel_debug_kit(self) -> bool:
-        return self._xnu_major >= os_data.tahoe.value
+        return self._xnu_major >= os_data.golden_gate.value
 
 
     def _modern_audio_patches(self) -> dict:
@@ -63,7 +63,7 @@ class ModernAudio(BaseHardware):
             "Modern Audio": {
                 PatchType.OVERWRITE_SYSTEM_VOLUME: {
                     "/System/Library/Extensions": {
-                        "AppleHDA.kext":      "26.0 Beta 1",
+                        "AppleHDA.kext":      "27.0 Beta 1",
                     },
                 },
             },
