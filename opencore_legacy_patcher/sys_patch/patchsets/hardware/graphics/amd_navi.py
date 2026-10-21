@@ -8,7 +8,7 @@ from ...base import PatchType
 
 from ...shared_patches.monterey_gva    import MontereyGVA
 from ...shared_patches.monterey_opencl import MontereyOpenCL
-from ...shared_patches.tahoe_graphics  import TahoeGraphics
+from ...shared_patches.golden_gate_graphics  import Golden_GateGraphics
 from ...shared_patches.amd_opencl      import AMDOpenCL
 
 from .....constants  import Constants
@@ -80,12 +80,12 @@ class AMDNavi(BaseHardware):
                         "AMDRadeonX6000.kext":            self._resolve_monterey_framebuffers(),
                         "AMDRadeonX6000Framebuffer.kext": "12.5",
 
-                        "AMDRadeonVADriver2.bundle":      "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5",
-                        "AMDRadeonX6000GLDriver.bundle":  "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5",
-                        "AMDRadeonX6000MTLDriver.bundle": "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5" if self._xnu_major < os_data.sequoia else "12.5-24",
+                        "AMDRadeonVADriver2.bundle":      "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5",
+                        "AMDRadeonX6000GLDriver.bundle":  "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5",
+                        "AMDRadeonX6000MTLDriver.bundle": "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5" if self._xnu_major < os_data.tahoe else "12.5-24",
                         "AMDRadeonX6000Shared.bundle":    "12.5",
 
-                        "AMDShared.bundle":               "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5",
+                        "AMDShared.bundle":               "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5",
                     },
                 }
             }
