@@ -16,7 +16,7 @@ class Constants:
         self.patcher_version:                 str = "3.0.0"  # OpenCore-Legacy-Patcher
         self.patcher_support_pkg_version:     str = "2.0.3"  # PatcherSupportPkg
         self.copyright_date:                  str = "Copyright © 2020-2026 Dortania and OpenCore Legacy Patcher contributors"
-        self.patcher_name:                    str = "OpenCore Legacy Patcher"
+        self.patcher_name:                    str = "OPLC-Pro
 
         # URLs
         self.url_patcher_support_pkg:         str = "https://github.com/dortania/PatcherSupportPkg/releases/download/"
@@ -253,7 +253,7 @@ class Constants:
             os_data.os_data.sonoma,
             os_data.os_data.sequoia,
             os_data.os_data.tahoe,
-        ]
+            os_data.os_data.golden_gate
 
     @property
     def special_build(self):
@@ -830,8 +830,8 @@ class Constants:
     @property
     def icon_path_macos_tahoe(self):
         return self.icns_resource_path / Path("Tahoe.icns")
-
-    @property
+                                                                                                          
+     @property
     def gui_path(self):
         return self.payload_path / Path("Icon/Resources.zip")
 
@@ -866,7 +866,7 @@ class Constants:
             str(self.icon_path_macos_sonoma),
             str(self.icon_path_macos_sequoia),
             str(self.icon_path_macos_tahoe),
-        ]
+            str(self.icon_path_macos_golden_gate
 
     sbm_values = [
         "j137ap",  #  iMacPro1,1
