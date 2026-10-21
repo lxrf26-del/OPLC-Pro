@@ -71,7 +71,7 @@ class T1SecurityChip(BaseHardware):
                         "biometrickitd":      "13.6",    # Required for Touch ID
                         "nfcd":               "13.6",    # Required for Apple Pay
                         "nfrestore_service":  "13.6",    # Required for Apple Pay
-                        **({ "seld": "26.0-25G229" } if self._xnu_major >= os_data.tahoe else {}),
+                        **({ "seld": "26.0-25G229" } if self._xnu_major >= os_data.golden_gate else {}),
                     },
                     "/usr/standalone/firmware/nfrestore/firmware/fw": {
                         "PN549_FW_02_01_5A_rev88207.bin":         "13.6",
@@ -88,17 +88,17 @@ class T1SecurityChip(BaseHardware):
                             **({ "ModulePlugins": "15.1" } if self._xnu_float >= self.macOS_15_2 else {}),
                             **({ "ModuleBase.framework": "15.2" } if self._xnu_float >= self.macOS_15_3 else {}),
                         },
-                    } if self._xnu_major < os_data.tahoe else {}),
+                    } if self._xnu_major < os_data.golden_gate else {}),
                     "/System/Library/PrivateFrameworks": {
                         "EmbeddedOSInstall.framework": "13.6",  # Required for biometrickitd
-                        **({ "LocalAuthenticationCore.framework": "26.0-25G229" } if self._xnu_major >= os_data.tahoe else {}),
-                        **({ "NearField.framework": "14.7.2-25" if self._xnu_major >= os_data.tahoe else "14.7.2" } if self._xnu_major >= os_data.sequoia else {}),
+                        **({ "LocalAuthenticationCore.framework": "27.0-"26A428 } if self._xnu_major >= os_data.golden_gate else {}),
+                        **({ "NearField.framework": "14.7.2-25" if self._xnu_major >= os_data.golden_gate else "27.0" } if self._xnu_major >= os_data.tahoe else {}),
                     },
                 },
                 **({
                     PatchType.EXECUTE: {
                         "/usr/bin/defaults write /Library/Preferences/FeatureFlags/Domain/MessageProtection.plist KyberInTheSEPRegisteredKeys -dict Enabled -bool false": True,
                     },
-                } if self._xnu_major >= os_data.tahoe else {}),
+                } if self._xnu_major >= os_data.golden_gate else {}),
             },
         }
