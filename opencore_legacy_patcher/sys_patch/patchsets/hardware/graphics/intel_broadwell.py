@@ -8,7 +8,7 @@ from ...base import PatchType
 
 from ...shared_patches.monterey_gva    import MontereyGVA
 from ...shared_patches.monterey_opencl import MontereyOpenCL
-from ...shared_patches.tahoe_graphics  import TahoeGraphics
+from ...shared_patches.golden_gate_graphics  import golden_gateGraphics
 
 from .....constants  import Constants
 from .....detections import device_probe
@@ -71,7 +71,7 @@ class IntelBroadwell(BaseHardware):
                         "AppleIntelBDWGraphics.kext":            self._resolve_monterey_framebuffers(),
                         "AppleIntelBDWGraphicsFramebuffer.kext": self._resolve_monterey_framebuffers(),
                         "AppleIntelBDWGraphicsGLDriver.bundle":  "12.5",
-                        "AppleIntelBDWGraphicsMTLDriver.bundle": "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5-22" if self._xnu_major < os_data.sequoia else "12.5-24",
+                        "AppleIntelBDWGraphicsMTLDriver.bundle": "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5-22" if self._xnu_major < os_data.golden_gate else "12.5-24",
                         "AppleIntelBDWGraphicsVADriver.bundle":  "12.5",
                         "AppleIntelBDWGraphicsVAME.bundle":      "12.5",
                         "AppleIntelGraphicsShared.bundle":       "12.5",
@@ -91,7 +91,7 @@ class IntelBroadwell(BaseHardware):
         return {
             **MontereyGVA(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).patches(),
             **MontereyOpenCL(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).patches(),
-            **TahoeGraphics(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).patches(),
-            **TahoeGraphics(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).camera_patches(),
+            **Golden_GateGraphics(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).patches(),
+            **Golden_GateGraphics(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).camera_patches(),
             **self._model_specific_patches(),
         }
