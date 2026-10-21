@@ -409,7 +409,7 @@ Please check the Github page for more information about this release."""
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.AddSpacer(10)
         self.title_text = wx.StaticText(panel, label="A new version of OPLC-Pro is available!")
-        self.description = wx.StaticText(panel, label=f"OpenCore Legacy Patcher {oclp_version} is now available - You have {self.constants.patcher_version}{' (Nightly)' if not self.constants.commit_info[0].startswith('refs/tags') else ''}. Would you like to update?")
+        self.description = wx.StaticText(panel, label=f"OPLC-Pro {oclp_version} is now available - You have {self.constants.patcher_version}{' (Nightly)' if not self.constants.commit_info[0].startswith('refs/tags') else ''}. Would you like to update?")
         self.title_text.SetFont(gui_support.font_factory(19, wx.FONTWEIGHT_BOLD))
         self.description.SetFont(gui_support.font_factory(13, wx.FONTWEIGHT_NORMAL))
         self.web_view = wx.html2.WebView.New(panel, style=wx.BORDER_SUNKEN)
