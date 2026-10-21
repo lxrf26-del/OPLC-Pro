@@ -1,5 +1,5 @@
 """
-modern_audio.py: Modern Audio patch set for macOS 26
+modern_audio.py: Modern Audio patch set for macOS 27
 """
 
 from ..base import BaseHardware, HardwareVariant
@@ -32,9 +32,9 @@ class ModernAudio(BaseHardware):
 
     def native_os(self) -> bool:
         """
-        - Everything before macOS Golden_Gate 27 is considered native
+        - Everything before macOS golden_gate 27 is considered native
         """
-        if self._xnu_major < os_data.Golden_Gate.value:
+        if self._xnu_major < os_data.golden_gate.value:
             return True
 
         # Technically, macOS Golden Gate Beta 1 is also native, so return True
