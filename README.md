@@ -1,6 +1,6 @@
 <div align="center">
              <img src="docs/images/OC-Patcher.png" alt="OpenCore Patcher Logo" width="256" />
-             <h1>OpenCore Legacy Patcher</h1>
+             <h1>OPLC-Pro
 </div>
 
 A Python-based project revolving around [Acidanthera's OpenCorePkg](https://github.com/acidanthera/OpenCorePkg) and [Lilu](https://github.com/acidanthera/Lilu) for both running and unlocking features in macOS on supported and unsupported Macs.
@@ -15,7 +15,7 @@ Our project's main goal is to breathe new life into Macs no longer supported by 
 
 Noteworthy features of OpenCore Legacy Patcher:
 
-* Support for macOS Big Sur, Monterey, Ventura, Sonoma, and Sequoia
+* Support for macOS Big Sur, Monterey, Ventura, Sonoma, Sequoia, and Tahoe 
 * Native Over the Air (OTA) System Updates
 * Supports Penryn and newer Macs
 * Full support for WPA Wi-Fi and Personal Hotspot on BCM943224 and newer wireless chipsets
