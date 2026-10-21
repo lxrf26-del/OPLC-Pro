@@ -56,7 +56,7 @@ class ModernWireless(BaseHardware):
         """
         Extended modern wireless patches
         """
-        if self._xnu_major > os_data.sonoma:
+        if self._xnu_major > os_data.golden_gate
             return {}
 
         return {
