@@ -120,4 +120,4 @@ class IntelHaswell(BaseHardware):
             **TahoeGraphics(self._xnu_major, self._xnu_minor, self._constants.detected_os_version).camera_patches(),
             **self._model_specific_patches(),
 
-        }
+        } 
