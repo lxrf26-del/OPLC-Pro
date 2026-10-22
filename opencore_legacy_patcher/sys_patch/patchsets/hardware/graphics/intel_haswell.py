@@ -10,7 +10,7 @@ from ...shared_patches.metal_3802      import LegacyMetal3802
 from ...shared_patches.monterey_gva    import MontereyGVA
 from ...shared_patches.monterey_opencl import MontereyOpenCL
 from ...shared_patches.tahoe_graphics  import TahoeGraphics
-
+from ...shared_patchess.golden_gate_graphics import Golden_GateGraphics
 from .....constants  import Constants
 from .....detections import device_probe
 
