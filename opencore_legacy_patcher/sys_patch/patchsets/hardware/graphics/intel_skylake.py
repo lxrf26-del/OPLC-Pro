@@ -64,7 +64,7 @@ class IntelSkylake(BaseHardware):
         Model specific patches
         """
         metal_driver_source = self._resolve_gcn_skylake_metal_drivers() or (
-            "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5" if self._xnu_major < os_data.sequoia else "12.5-24"
+            "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5" if self._xnu_major < os_data.tahoe else "12.5-24"
         )
 
         return {
