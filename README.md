@@ -15,7 +15,7 @@ Our project's main goal is to breathe new life into Macs no longer supported by 
 
 Noteworthy features of OPLC-Pro
 
-* Support for macOS Big Sur, Monterey, Ventura, Sonoma, Sequoia, and Tahoe 
+* Support for macOS Big Sur, Monterey, Ventura, Sonoma, Sequoia, Tahoe, and Golden Gate 
 * Native Over the Air (OTA) System Updates
 * Supports Penryn and newer Macs
 * Full support for WPA Wi-Fi and Personal Hotspot on BCM943224 and newer wireless chipsets
