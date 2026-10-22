@@ -9,7 +9,7 @@ from ...base import PatchType
 from ...shared_patches.monterey_gva    import MontereyGVA
 from ...shared_patches.monterey_opencl import MontereyOpenCL
 from ...shared_patches.tahoe_graphics  import TahoeGraphics
-from ...shared_patches.amd_opencl      import AMDOpenCL
+from ...shared_patches.tahoe_graphics  import Golden_GateGraphics                                               from ...shared_patches.amd_opencl      import AMDOpenCL
 
 from .....constants  import Constants
 from .....detections import device_probe
@@ -79,12 +79,12 @@ class AMDVega(BaseHardware):
                     "/System/Library/Extensions": {
                         "AMDRadeonX5000.kext":            self._resolve_monterey_framebuffers(),
 
-                        "AMDRadeonVADriver2.bundle":      "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5",
-                        "AMDRadeonX5000GLDriver.bundle":  "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5",
-                        "AMDRadeonX5000MTLDriver.bundle": "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5" if self._xnu_major < os_data.sequoia else "12.5-24",
+                        "AMDRadeonVADriver2.bundle":      "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5",
+                        "AMDRadeonX5000GLDriver.bundle":  "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5",
+                        "AMDRadeonX5000MTLDriver.bundle": "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5" if self._xnu_major < os_data.tahoe else "12.5-24",
                         "AMDRadeonX5000Shared.bundle":    "12.5",
 
-                        "AMDShared.bundle":               "12.5-25" if self._xnu_major >= os_data.tahoe else "12.5",
+                        "AMDShared.bundle":               "12.5-25" if self._xnu_major >= os_data.golden_gate else "12.5",
                     },
                 },
             },
